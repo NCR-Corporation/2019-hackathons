@@ -37,10 +37,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-accounts/v1/accounts?hostUserId=HACKATHONUSER001",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-accounts/v1/accounts?hostUserId=HACKATHONUSER001",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -68,17 +68,14 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"type": "text",
 										"value": "Bearer {{access_token}}"
 									},
 									{
 										"key": "transactionId",
-										"type": "text",
 										"value": "fdd1542a-bcfd-439b-a6a1-5a064023b0ce"
 									},
 									{
 										"key": "Accept",
-										"type": "text",
 										"value": "application/json"
 									}
 								],
@@ -87,10 +84,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-accounts/v1/accounts/rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-accounts/v1/accounts/rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -104,7 +101,8 @@
 									"query": [
 										{
 											"key": "hostUserId",
-											"value": "HACKATHONUSER100"
+											"value": "HACKATHONUSER100",
+											"equals": true
 										}
 									]
 								}
@@ -125,17 +123,14 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"type": "text",
 										"value": "Bearer {{access_token}}"
 									},
 									{
 										"key": "transactionId",
-										"type": "text",
 										"value": "fdd1542a-bcfd-439b-a6a1-5a064023b0ce"
 									},
 									{
 										"key": "Accept",
-										"type": "text",
 										"value": "application/json"
 									}
 								],
@@ -144,10 +139,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-transactions/v1/transactions?accountId=rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU&hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-transactions/v1/transactions?accountId=rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU&hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -160,11 +155,13 @@
 									"query": [
 										{
 											"key": "accountId",
-											"value": "rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU"
+											"value": "rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU",
+											"equals": true
 										},
 										{
 											"key": "hostUserId",
-											"value": "HACKATHONUSER100"
+											"value": "HACKATHONUSER100",
+											"equals": true
 										}
 									]
 								}
@@ -223,10 +220,10 @@
 									"raw": "{\n\t\"memberNumber\":\"HACKATHONUSER001\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\",\n\t\"email\":\"di.api.qal1@gmail.com\",\n\t\"nickName\":\"hackathon 1\"\n}"
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -293,10 +290,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -363,10 +360,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -395,21 +392,21 @@
 								{
 									"listen": "prerequest",
 									"script": {
-										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
-										"type": "text/javascript",
 										"exec": [
 											"pm.environment.set(\"recipients-uuid\", require('uuid').v4());"
-										]
+										],
+										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
+										"type": "text/javascript"
 									}
 								},
 								{
 									"listen": "test",
 									"script": {
-										"id": "e52fe167-a69e-47bf-bb47-7d7bc092e841",
-										"type": "text/javascript",
 										"exec": [
 											""
-										]
+										],
+										"id": "e52fe167-a69e-47bf-bb47-7d7bc092e841",
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -434,10 +431,10 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -505,10 +502,10 @@
 									"raw": "{\n\t\"id\": \"4591e2f7aef549258fd811b38b19635d\",\n\t\"memberNumber\":\"HACKATHONUSER001\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\",\n\t\"email\":\"di.api.qal1@gmail.com\",\n\t\"nickName\":\"hackathon 1\"\n}"
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -601,10 +598,10 @@
 									"raw": "{\n\t\"memberNumber\":\"HACKATHONUSER100\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\"\n}"
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-recipients/v1/recipients?validate=true&fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?validate=true&fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -692,10 +689,10 @@
 									"raw": "{\n\t\"fromAccountHolderId\":\"24b369240a034da58e25aaff1a205508\",\n\t\"fromAccountId\":\"rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU\",\n\t\"toAccountId\":\"U1fgmemAI-KNjGpoZkKGnS1jNJZa_h222o9Dcmj9Yx0\",\n\t\"amount\":{\n\t\t\"amount\":1.0\n\t}\n}"
 								},
 								"url": {
-									"raw": "http://ncrdev-dev.apigee.net/digitalbanking/db-transfers/v1/transfers?hostUserId=HACKATHONUSER100",
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-transfers/v1/transfers?hostUserId=HACKATHONUSER100",
 									"protocol": "http",
 									"host": [
-										"ncrdev-dev",
+										"ncrqe-qe",
 										"apigee",
 										"net"
 									],
@@ -720,12 +717,6 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Prism",
-					"description": "",
-					"item": [],
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "Run First - Get Token - Client credentials",
 					"event": [
 						{
@@ -742,26 +733,42 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "08100fb22af340fdb0d0cbcce5b0bc2e",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "401daab22e3b401680e68e946cbeb9c2",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
 								"value": "application/x-www-form-urlencoded"
 							},
 							{
-								"key": "Authorization",
-								"value": "Basic alI3RWg3dUF5cFQ0dEpMb0xVMmRBTVlHQ1l5ejZsVjg6T3FRZXQ0OE5YWDdTQXB4SA=="
-							},
-							{
 								"key": "transactionId",
-								"value": "{{$guid}}"
+								"type": "text",
+								"value": "f3df8be7-621d-4278-994a-1f3d6a156c1d"
 							},
 							{
 								"key": "institutionId",
+								"type": "text",
 								"value": "00516"
 							},
 							{
 								"key": "Accept",
+								"type": "text",
 								"value": "application/json"
 							}
 						],
@@ -776,21 +783,15 @@
 								{
 									"key": "scopes",
 									"type": "text",
-									"value": "accounts:read,account:write,transactions:read,transfers:write,institution-users:read,recipients:read,recipients:write,recipients:delete,images:read,disclosures:read,disclosures:write"
-								},
-								{
-									"description": "",
-									"key": "",
-									"type": "text",
-									"value": ""
+									"value": "accounts:read,transactions:read,transfers:write,account:write,institution-users:read,recipients:read,recipients:write,recipients:delete,disclosures:read,disclosures:write"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://ncrdev-dev.apigee.net/digitalbanking/oauth2/v1/token",
+							"raw": "http://ncrqe-qe.apigee.net/digitalbanking/oauth2/v1/token",
 							"protocol": "http",
 							"host": [
-								"ncrdev-dev",
+								"ncrqe-qe",
 								"apigee",
 								"net"
 							],
@@ -812,8 +813,8 @@
 							"script": {
 								"exec": [
 									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"password_access_token\", jsonData.access_token);",
-									"postman.setEnvironmentVariable(\"password_refresh_token\", jsonData.refresh_token);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
 									""
 								],
 								"id": "c1360c7d-9cd2-4cf2-814d-2afd26c50919",
@@ -826,26 +827,33 @@
 						"header": [
 							{
 								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
 								"value": "application/x-www-form-urlencoded"
 							},
 							{
 								"key": "Authorization",
-								"value": "Basic alI3RWg3dUF5cFQ0dEpMb0xVMmRBTVlHQ1l5ejZsVjg6T3FRZXQ0OE5YWDdTQXB4SA=="
+								"type": "text",
+								"value": "Basic NDAxZGFhYjIyZTNiNDAxNjgwZTY4ZTk0NmNiZWI5YzI6MDgxMDBmYjIyYWYzNDBmZGIwZDBjYmNjZTViMGJjMmU="
 							},
 							{
 								"key": "transactionId",
+								"type": "text",
 								"value": "f3df8be7-621d-4278-994a-1f3d6a156c1d"
 							},
 							{
 								"key": "institutionId",
+								"type": "text",
 								"value": "DI0516"
 							},
 							{
 								"key": "Accept",
+								"type": "text",
 								"value": "application/json"
 							},
 							{
 								"key": "X-Forwarded-For",
+								"type": "text",
 								"value": "70.95.11.205",
 								"disabled": true
 							}
@@ -859,27 +867,27 @@
 									"value": "password"
 								},
 								{
+									"key": "scopes",
+									"type": "text",
+									"value": "accounts:read,transactions:read,transfers:write,account:write,institution-users:read,recipients:read,recipients:write,recipients:delete,disclosures:read,disclosures:write"
+								},
+								{
 									"key": "username",
 									"type": "text",
-									"value": "HACKATHONUSER200"
+									"value": "HACKATHONUSER001"
 								},
 								{
 									"key": "password",
 									"type": "text",
 									"value": "test123"
-								},
-								{
-									"key": "scopes",
-									"type": "text",
-									"value": "accounts:read,account:write,transactions:read,transfers:write,institution-users:read,recipients:read,recipients:write,recipients:delete,images:read,disclosures:read,disclosures:write"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://ncrdev-dev.apigee.net/digitalbanking/oauth2/v1/token",
+							"raw": "http://ncrqe-qe.apigee.net/digitalbanking/oauth2/v1/token",
 							"protocol": "http",
 							"host": [
-								"ncrdev-dev",
+								"ncrqe-qe",
 								"apigee",
 								"net"
 							],
