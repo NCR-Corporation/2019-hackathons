@@ -1,0 +1,907 @@
+{
+	"info": {
+		"name": "HACKATHON_APIS",
+		"_postman_id": "4b66351a-1260-6a90-720a-4be25e86755f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "APX",
+			"description": "",
+			"item": [
+				{
+					"name": "Accounts",
+					"description": "",
+					"item": [
+						{
+							"name": "APX - Get Accounts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-accounts/v1/accounts?hostUserId=HACKATHONUSER001",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-accounts",
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER001",
+											"equals": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "APX - Get Account",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "transactionId",
+										"value": "fdd1542a-bcfd-439b-a6a1-5a064023b0ce"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-accounts/v1/accounts/rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-accounts",
+										"v1",
+										"accounts",
+										"rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transactions",
+					"description": "",
+					"item": [
+						{
+							"name": "APX - Get Transactions",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "transactionId",
+										"value": "fdd1542a-bcfd-439b-a6a1-5a064023b0ce"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-transactions/v1/transactions?accountId=rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU&hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-transactions",
+										"v1",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "accountId",
+											"value": "rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU",
+											"equals": true
+										},
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Recipient",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Recipient",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "258f30ca-8a45-4cda-85d4-59fa85eb8cd6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "18b52484-a9c4-49c5-a34b-82be0938bfd6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"memberNumber\":\"HACKATHONUSER001\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\",\n\t\"email\":\"di.api.qal1@gmail.com\",\n\t\"nickName\":\"hackathon 1\"\n}"
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						},
+						{
+							"name": "Get Recipients",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "fbe8f275-572a-4a46-9586-50abf02cd2ba",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "20cef2b4-d52b-4444-81f1-679b291419bc",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						},
+						{
+							"name": "Get Recipient",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
+										"type": "text/javascript",
+										"exec": [
+											"pm.environment.set(\"recipients-uuid\", require('uuid').v4());"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "4102d337-dbf0-4ba0-96a3-791c9d0ce08e",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients",
+										"4591e2f7aef549258fd811b38b19635d"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Recipient",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"recipients-uuid\", require('uuid').v4());"
+										],
+										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"id": "e52fe167-a69e-47bf-bb47-7d7bc092e841",
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients",
+										"4591e2f7aef549258fd811b38b19635d"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						},
+						{
+							"name": "Update Recipient",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
+										"type": "text/javascript",
+										"exec": [
+											"pm.environment.set(\"recipients-uuid\", require('uuid').v4());"
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "9a2df474-9930-4cf8-84f8-1ac673a06071",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"4591e2f7aef549258fd811b38b19635d\",\n\t\"memberNumber\":\"HACKATHONUSER001\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\",\n\t\"email\":\"di.api.qal1@gmail.com\",\n\t\"nickName\":\"hackathon 1\"\n}"
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients/4591e2f7aef549258fd811b38b19635d?fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients",
+										"4591e2f7aef549258fd811b38b19635d"
+									],
+									"query": [
+										{
+											"key": "fromAccountId",
+											"value": "9548055007",
+											"equals": true
+										},
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						},
+						{
+							"name": "Validate Recipient copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"recipients-uuid\", require('uuid').v4());"
+										],
+										"id": "498e7e2a-f4c8-41f4-83c5-82c9e2841126",
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"//Load pxlib",
+											"var pxlib = eval(pm.globals.get(\"pxlib\"));",
+											"",
+											"//Start testing using pxlib",
+											"startPXTest(pm, pm.globals.get(\"useStrictValidation\"));",
+											"",
+											"//Validate response status code",
+											"expectResponseStatusCodeToBe(200);",
+											"",
+											"//Validate response headers",
+											"expectResponseToHaveHeader(\"transactionId\", pm.environment.get(\"recipients-uuid\"));",
+											"",
+											"//Validate response body",
+											"expectResponseBodyToHaveJsonProperty(\"memberNumber\", \"apigeerec01\");",
+											"expectResponseBodyToHaveJsonProperty(\"accountNumber\", \"9990001004\");",
+											"expectResponseBodyToHaveJsonProperty(\"accountType\", \"SAVINGS\");",
+											"expectResponseBodyToHaveJsonProperty(\"passCode\", \"foo\");",
+											"",
+											"",
+											"//End testing using pxlib",
+											"endPXTest();"
+										],
+										"id": "a56804d7-9878-45cf-abd0-e9ddde4720cb",
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"memberNumber\":\"HACKATHONUSER100\",\n\t\"accountNumber\":\"9548055007\",\n\t\"accountType\":\"CHECKING\",\n\t\"passCode\":\"foo\"\n}"
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-recipients/v1/recipients?validate=true&fromAccountId=9548055007&hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-recipients",
+										"v1",
+										"recipients"
+									],
+									"query": [
+										{
+											"key": "validate",
+											"value": "true",
+											"equals": true
+										},
+										{
+											"key": "fromAccountId",
+											"value": "9548055007",
+											"equals": true
+										},
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								},
+								"description": "**USE STRICT IS REQUIRED FOR THIS TEST**\n# Test Objective\n1. Include the transfer request paramer testTransfer=true\n2. Validate a scheduled transfer is created with an empty notification message."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transfers",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Transfer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3f3027ca-f37a-4b1a-8dc2-fb20d4cf9339",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2a18ae27-aac4-47ec-a963-6250fb2b56c7",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{access_token}}"
+									},
+									{
+										"key": "transactionId",
+										"value": "{{$guid}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"fromAccountHolderId\":\"24b369240a034da58e25aaff1a205508\",\n\t\"fromAccountId\":\"rf5ao6Qclwsth9OfOvUb-EeV1m2BfmTzUEALGLQ3ehU\",\n\t\"toAccountId\":\"U1fgmemAI-KNjGpoZkKGnS1jNJZa_h222o9Dcmj9Yx0\",\n\t\"amount\":{\n\t\t\"amount\":1.0\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://ncrqe-qe.apigee.net/digitalbanking/db-transfers/v1/transfers?hostUserId=HACKATHONUSER100",
+									"protocol": "http",
+									"host": [
+										"ncrqe-qe",
+										"apigee",
+										"net"
+									],
+									"path": [
+										"digitalbanking",
+										"db-transfers",
+										"v1",
+										"transfers"
+									],
+									"query": [
+										{
+											"key": "hostUserId",
+											"value": "HACKATHONUSER100",
+											"equals": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Run First - Get Token - Client credentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									""
+								],
+								"id": "c1360c7d-9cd2-4cf2-814d-2afd26c50919",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "08100fb22af340fdb0d0cbcce5b0bc2e",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "401daab22e3b401680e68e946cbeb9c2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "transactionId",
+								"type": "text",
+								"value": "f3df8be7-621d-4278-994a-1f3d6a156c1d"
+							},
+							{
+								"key": "institutionId",
+								"type": "text",
+								"value": "00516"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"type": "text",
+									"value": "client_credentials"
+								},
+								{
+									"key": "scopes",
+									"type": "text",
+									"value": "accounts:read,transactions:read,transfers:write,account:write,institution-users:read,recipients:read,recipients:write,recipients:delete,disclosures:read,disclosures:write"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://ncrqe-qe.apigee.net/digitalbanking/oauth2/v1/token",
+							"protocol": "http",
+							"host": [
+								"ncrqe-qe",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"digitalbanking",
+								"oauth2",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Run First - Get Token - Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);",
+									"postman.setEnvironmentVariable(\"refresh_token\", jsonData.refresh_token);",
+									""
+								],
+								"id": "c1360c7d-9cd2-4cf2-814d-2afd26c50919",
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Basic NDAxZGFhYjIyZTNiNDAxNjgwZTY4ZTk0NmNiZWI5YzI6MDgxMDBmYjIyYWYzNDBmZGIwZDBjYmNjZTViMGJjMmU="
+							},
+							{
+								"key": "transactionId",
+								"type": "text",
+								"value": "f3df8be7-621d-4278-994a-1f3d6a156c1d"
+							},
+							{
+								"key": "institutionId",
+								"type": "text",
+								"value": "DI0516"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "X-Forwarded-For",
+								"type": "text",
+								"value": "70.95.11.205",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"type": "text",
+									"value": "password"
+								},
+								{
+									"key": "scopes",
+									"type": "text",
+									"value": "accounts:read,transactions:read,transfers:write,account:write,institution-users:read,recipients:read,recipients:write,recipients:delete,disclosures:read,disclosures:write"
+								},
+								{
+									"key": "username",
+									"type": "text",
+									"value": "HACKATHONUSER001"
+								},
+								{
+									"key": "password",
+									"type": "text",
+									"value": "test123"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://ncrqe-qe.apigee.net/digitalbanking/oauth2/v1/token",
+							"protocol": "http",
+							"host": [
+								"ncrqe-qe",
+								"apigee",
+								"net"
+							],
+							"path": [
+								"digitalbanking",
+								"oauth2",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
